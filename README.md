@@ -16,8 +16,8 @@ The project uses the **Anime Face Dataset** from Kaggle:
 
 1. **Clone the Repository**  
    ```sh
-   git clone https://github.com/your-repo/anime-face-gan.git
-   cd anime-face-gan
+   git clone https://github.com/Kanhaiya1610/AnimeGANTrainer.git
+   cd AnimeGANTrainer
    ```
 
 2. **Install Dependencies**  
@@ -31,8 +31,9 @@ The project uses the **Anime Face Dataset** from Kaggle:
    !mkdir -p ~/.kaggle
    !echo '{"username":"<your_kaggle_username>","key":"<your_kaggle_key>"}' > ~/.kaggle/kaggle.json
    !chmod 600 ~/.kaggle/kaggle.json
-   !kaggle datasets download -d splcher/animefacedataset -p ./data
-   !unzip ./data/animefacedataset.zip -d ./data/anime_dataset
+   #for google_colab first mount gdrive & replace <./data> to <./content/drive> 
+   !kaggle datasets download -d splcher/animefacedataset -p ./data #<./content/drive/>
+   !unzip ./data/animefacedataset.zip -d ./data/anime_dataset #<./content/drive/anime_dataset>
    ```
 
 ## 🚀 Running the Model
@@ -43,17 +44,18 @@ jupyter notebook AnimeFace_GAN_Model.ipynb
 
 Or execute the Python script:
 ```sh
+# After copying whole code into a file named train.py
 python train.py
 ```
 
 ## ⚙️ Training Parameters
 - **Image Size**: 224x224  
 - **Batch Size**: 32  
-- **Epochs**: Recommended to start small (e.g., 10) and increase  
+- **Epochs**: Recommended to start small (e.g., 100) and increase  
 - **Optimizer**: Adam  
 
 ## 🖼 Output Examples
-After training, the model generates **anime-style faces** similar to those in the dataset.
+After training, the model generates **anime-style faces** similar to those in the dataset & you can't find exact in the dataset if tried to cross-check.
 
 ## 🏗 Future Improvements
 - Enhance model architecture (e.g., using StyleGAN).  
